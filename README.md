@@ -2,12 +2,15 @@
 
 In this project you will find 3 examples how to implement a simple soapclient with the 3 most popular microservice frameworks.
 
-There are two options how to get soap actions. You can write all classes by yourself with required annotations or you generate the necessary classes from wsdl.
-As the SOAP Services already exists I you only the approach to generate the classes from wsdl. 
+There are two options to get necessary soap classes. You can write all classes by yourself with required annotations or you generate the necessary classes from wsdl.
+As the SOAP Services and wsdl already exists, I used the contract first approach and generate the classes from wsdl. 
 
-To run one of client you will first need to start the SOAP backend service. To do this just run the `docker-compose` script. Then you compile each service with a normal jdk oder graalvm and run the ueber-jar. Thats it. Then you can call each project via browser or you run the jmeter test suite.
+To run one of the clients you will first need to start the SOAP backend service. To do this just run the `docker-compose` script. Then you compile each service with a normal jdk oder graalvm and run the ueber-jar. Thats it. To make this easier there are 3 bash scripts with all required commands. `compile_and_run_springboot-soapclient.sh`, `compile_and_run_micronaut-soapclient.sh`, `compile_and_run_quarkus-soapclient.sh`
 
-# table of contents
+Then you can call each project via browser or you run the jmeter test suite.
+
+
+## table of contents
 
 * [springboot](#springboot)
 * [micronaut](#micronaut)
