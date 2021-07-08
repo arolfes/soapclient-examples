@@ -1,0 +1,16 @@
+micronaut:
+  application:
+    name: micronaut-soapclient
+  server:
+    port: 9082
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+        step: PT5S
+        descriptions: true
+endpoints:
+  prometheus:
+    sensitive: false
+greeter:
+  url: http://localhost:9080/MockService

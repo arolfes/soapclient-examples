@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-workspace name="HelloWorld" soapui-version="5.6.0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="UISettings@show_startup_page">false</con:setting>
+    <con:setting id="UISettings@gc_interval">60</con:setting>
+    <con:setting id="UISettings@close-projects">false</con:setting>
+    <con:setting id="UISettings@order-projects">true</con:setting>
+    <con:setting id="UISettings@order-services">true</con:setting>
+    <con:setting id="UISettings@order-requests">true</con:setting>
+    <con:setting id="UISettings@create_backup">false</con:setting>
+    <con:setting id="UISettings@auto_validate_request">true</con:setting>
+    <con:setting id="UISettings@abort_on_invalid_request">false</con:setting>
+    <con:setting id="UISettings@auto_validate_response">true</con:setting>
+    <con:setting id="UISettings@show_xml_line_numbers">true</con:setting>
+    <con:setting id="UISettings@show_groovy_line_numbers">true</con:setting>
+  </con:settings>
+  <con:project name="HelloWorldService">/workspace/sources/arolfes/soapclients-examples/resources/soapui/HelloWorldService-soapui-project.xml</con:project>
+  <con:collectInfoForSupport>false</con:collectInfoForSupport>
+</con:soapui-workspace>

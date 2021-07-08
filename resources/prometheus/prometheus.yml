@@ -1,0 +1,27 @@
+# prometheus.yml
+global:
+  scrape_interval: 5s
+  external_labels:
+    monitor: 'my-monitor'
+scrape_configs:
+  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
+  - job_name: 'prometheus'
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+    static_configs:
+      - targets: ['127.0.0.1:9090']
+
+  - job_name: 'micronaut-soapclient'
+    metrics_path: '/prometheus'
+    static_configs:
+      - targets: ['localhost:9082']
+  - job_name: 'springboot-soapclient'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['localhost:9083']
+  - job_name: 'quarkus-soapclient'
+    metrics_path: '/q/metrics'
+    static_configs:
+      - targets: ['localhost:9081']

@@ -1,0 +1,35 @@
+version: '2.2'
+services: 
+  soapui-mockservice-runner:
+    image: fbascheper/soapui-mockservice-runner:latest
+    container_name: soapui-mockservice-runner
+    ports:
+      - "9080:8080"
+    volumes:
+      - "./resources/soapui:/home/soapui/soapui-prj/"
+    environment:
+      MOCK_SERVICE_NAME: "MockService"
+      PROJECT: "/home/soapui/soapui-prj/HelloWorldService-soapui-project.xml"
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    volumes:
+      - ./resources/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - '9090:9090'
+    network_mode: host
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    depends_on:
+      - prometheus
+    ports:
+      - "3000:3000"
+    network_mode: host
+    user: $UID:$GID
+    volumes:
+      - ./resources/grafana/:/etc/grafana/provisioning/
