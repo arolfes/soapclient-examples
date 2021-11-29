@@ -20,6 +20,7 @@ java.sourceCompatibility = JavaVersion.VERSION_11
 java.targetCompatibility = java.sourceCompatibility
 val jvmTargetVersion = java.sourceCompatibility.toString()
 
+val assertjVersion: String by project
 val quarkusPlatformGroupId: String by project
 val quarkusPlatformArtifactId: String by project
 val quarkusPlatformVersion: String by project
@@ -41,6 +42,7 @@ dependencies {
     implementation("io.quarkus:quarkus-micrometer-registry-prometheus")
     testImplementation("io.quarkus:quarkus-junit5")
     testImplementation("io.rest-assured:rest-assured")
+    testImplementation("org.assertj:assertj-core:$assertjVersion")
 }
 
 
